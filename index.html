@@ -1,1045 +1,740 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="no-js">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antony Escalona | Editor de Video Senior & Director de Postproducción</title>
+    <title>Anthony Escalona | Diseñador Gráfico &amp; Editor de Video</title>
+    <meta name="description"
+        content="Portafolio oficial de Anthony Escalona, Diseñador Gráfico y Editor de Video. +2M de visualizaciones y +100 proyectos con Adobe Premiere, DaVinci y CapCut Pro.">
+    <meta name="author" content="Anthony Escalona">
+    <meta name="theme-color" content="#07080B">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Open Graph / Redes Sociales (WhatsApp, Facebook, LinkedIn, Telegram) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anthony Escalona | Diseñador Gráfico &amp; Editor de Video">
+    <meta property="og:description"
+        content="Portafolio de Anthony Escalona: Diseñador Gráfico / Editor. +2M de visualizaciones y +100 proyectos editados con Adobe Premiere, DaVinci y CapCut Pro.">
+    <meta property="og:image" content="img/perfil.jpg">
+    <meta property="og:site_name" content="Anthony Escalona">
 
-    <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anthony Escalona | Diseñador Gráfico &amp; Editor de Video">
+    <meta name="twitter:description"
+        content="Portafolio de Anthony Escalona: Diseñador Gráfico y Editor de Video. +2M visualizaciones y +100 proyectos.">
+    <meta name="twitter:image" content="img/perfil.jpg">
+
+    <!-- Quita la clase no-js de inmediato para que las animaciones funcionen sin parpadeo -->
+    <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
+    <!-- Tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Syne"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            gold: '#D4AF37',
-                            goldLight: '#F3E5AB',
-                            goldHover: '#E5C158',
-                            accent: '#6366F1',
-                            surface: '#0B0C10',
-                            card: '#12141C',
-                            cardHover: '#181B26',
-                            border: 'rgba(255, 255, 255, 0.08)',
-                            borderGold: 'rgba(212, 175, 55, 0.25)'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #07080B;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1F2332;
-            border-radius: 9999px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #32384E;
-        }
-
-        /* Ambient Glow radial gradients */
-        .glow-gold {
-            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, rgba(11, 12, 16, 0) 70%);
-        }
-
-        .glow-indigo {
-            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.06) 0%, rgba(11, 12, 16, 0) 70%);
-        }
-
-        /* Aspect ratio utilities */
-        .aspect-vertical {
-            aspect-ratio: 9 / 16;
-        }
-
-        .aspect-horizontal {
-            aspect-ratio: 16 / 9;
-        }
-
-        /* Subtle grid background pattern */
-        .bg-grid-pattern {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-        }
-
-        /* Text gradient effect */
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #FFF0C3 0%, #D4AF37 50%, #AA820A 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+    <!-- Iconos + interacciones -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 
-<body
-    class="bg-[#07080B] text-zinc-300 font-sans antialiased selection:bg-[#D4AF37] selection:text-black min-h-screen relative overflow-x-hidden bg-grid-pattern">
+<body>
 
-    <!-- Background Glow Blobs -->
-    <div class="fixed top-0 left-1/3 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] glow-gold pointer-events-none -z-10 blur-3xl"></div>
-    <div class="fixed bottom-1/3 right-5 w-[400px] sm:w-[700px] h-[400px] sm:h-[700px] glow-indigo pointer-events-none -z-10 blur-3xl"></div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader__logo">AE</div>
+        <div class="preloader__bar"><span></span></div>
+    </div>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-40 backdrop-blur-2xl bg-[#07080B]/90 border-b border-white/[0.07] transition-all">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-            
-            <!-- Brand Logo -->
-            <a href="#sobre-mi" class="group flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#D4AF37] via-amber-300 to-[#F3E5AB] flex items-center justify-center text-black font-display font-extrabold text-base shadow-lg shadow-[#D4AF37]/15 group-hover:scale-105 transition-transform">
-                    AE
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-display font-extrabold tracking-tight text-white group-hover:text-[#D4AF37] transition-colors text-sm sm:text-base">
-                        ANTONY ESCALONA
-                    </span>
-                    <span class="text-[9px] sm:text-[10px] uppercase tracking-widest text-zinc-400 font-semibold">
-                        Postproducción & Visual Storytelling
-                    </span>
-                </div>
+    <!-- Decoración de fondo -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb--1"></span>
+        <span class="orb orb--2"></span>
+        <span class="orb orb--3"></span>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#inicio" class="brand" aria-label="Anthony Escalona - Inicio">
+                <span class="brand__mark">AE</span>
+                <span class="brand__text">
+                    <strong>ANTHONY ESCALONA</strong>
+                    <small>Diseñador Gráfico / Editor</small>
+                </span>
             </a>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre Mí</a>
-                <a href="#verticales" class="hover:text-white transition-colors flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
-                    Formatos 9:16
-                </a>
-                <a href="#horizontales" class="hover:text-white transition-colors">YouTube & VSL (16:9)</a>
-                <a href="#metodologia" class="hover:text-white transition-colors">Metodología</a>
-                <a href="#testimonios" class="hover:text-white transition-colors">Testimonios</a>
+            <nav class="nav" id="nav" aria-label="Navegación principal">
+                <a href="#inicio" class="nav__link">Inicio</a>
+                <a href="#verticales" class="nav__link">Reels 9:16</a>
+                <a href="#horizontales" class="nav__link">YouTube &amp; VSL</a>
+                <a href="#proceso" class="nav__link">Proceso</a>
+                <a href="#testimonios" class="nav__link">Testimonios</a>
+                <a href="#contacto" class="btn btn--primary btn--lg nav__cta">Contactar</a>
             </nav>
 
-            <!-- CTA & Mobile Toggle -->
-            <div class="flex items-center gap-3">
-                <a href="#contacto"
-                    class="hidden sm:inline-flex relative group px-5 py-2.5 rounded-full bg-white text-zinc-950 font-bold text-xs uppercase tracking-wider overflow-hidden hover:shadow-xl hover:shadow-white/10 transition-all">
-                    <span class="relative z-10 flex items-center gap-2">
-                        <span>Iniciar Proyecto</span>
-                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                    </span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-amber-200 via-[#D4AF37] to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </a>
+            <a href="#contacto" class="btn btn--light header__cta">
+                Contactar <i data-lucide="arrow-up-right"></i>
+            </a>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white focus:outline-none">
-                    <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobileDrawer" class="hidden md:hidden border-t border-white/10 bg-[#07080B]/95 backdrop-blur-2xl px-6 py-6 space-y-4">
-            <a href="#sobre-mi" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-zinc-300 hover:text-white">Sobre Mí</a>
-            <a href="#verticales" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-zinc-300 hover:text-white">Formatos Cortos (9:16)</a>
-            <a href="#horizontales" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-zinc-300 hover:text-white">YouTube & VSL (16:9)</a>
-            <a href="#metodologia" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-zinc-300 hover:text-white">Metodología</a>
-            <a href="#testimonios" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-zinc-300 hover:text-white">Testimonios</a>
-            <a href="#contacto" onclick="toggleMobileMenu()" class="inline-flex w-full justify-center px-5 py-3 rounded-full bg-[#D4AF37] text-black font-extrabold text-xs uppercase tracking-wider">Iniciar Proyecto</a>
+            <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="sobre-mi" class="pt-12 sm:pt-16 pb-20 sm:pb-28 relative max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+    <main>
 
-            <!-- Left Column: Biography & Value Proposition -->
-            <div class="lg:col-span-7 flex flex-col justify-center">
-                
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/[0.04] border border-[#D4AF37]/30 w-fit mb-6">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span class="text-[11px] sm:text-xs font-semibold text-zinc-200 tracking-wide uppercase">
-                        Disponible para Proyectos Selectos — Q4 2026
-                    </span>
-                </div>
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="inicio">
+            <div class="container hero__grid">
 
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display text-white tracking-tight leading-[1.15] sm:leading-[1.1] mb-6">
-                    Postproducción Audiovisual que <span class="text-gold-gradient">Retiene, Cautiva y Convierte.</span>
-                </h1>
-
-                <p class="text-sm sm:text-lg text-zinc-300 leading-relaxed font-normal mb-8 max-w-2xl">
-                    Soy <strong class="text-white font-semibold">Antony Escalona</strong>, Director de Postproducción y Editor de Video Senior. Transformo material crudo en narrativas de alta calidad visual para marcas globales, infoproductores de alto ticket y creadores con millones de reproducciones.
-                </p>
-
-                <!-- High Impact Metrics Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 py-5 sm:py-6 px-4 sm:px-6 rounded-2xl bg-brand-card border border-white/[0.08] mb-8">
-                    <div>
-                        <span class="block text-2xl sm:text-3xl font-extrabold font-display text-white">+50M</span>
-                        <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400 font-medium">Vistas Generadas</span>
-                    </div>
-                    <div class="sm:border-l border-white/10 sm:pl-4">
-                        <span class="block text-2xl sm:text-3xl font-extrabold font-display text-[#D4AF37]">+180</span>
-                        <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400 font-medium">Proyectos Producidos</span>
-                    </div>
-                    <div class="border-t sm:border-t-0 sm:border-l border-white/10 pt-2.5 sm:pt-0 sm:pl-4">
-                        <span class="block text-2xl sm:text-3xl font-extrabold font-display text-white">99.4%</span>
-                        <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400 font-medium">Entrega a Tiempo</span>
-                    </div>
-                    <div class="border-t sm:border-t-0 sm:border-l border-white/10 pt-2.5 sm:pt-0 sm:pl-4">
-                        <span class="block text-2xl sm:text-3xl font-extrabold font-display text-emerald-400">+45%</span>
-                        <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-zinc-400 font-medium">Retención Promedio</span>
-                    </div>
-                </div>
-
-                <!-- Software & Stack Section -->
-                <div class="space-y-3 mb-8 sm:mb-9">
-                    <p class="text-xs uppercase font-bold tracking-wider text-zinc-400 flex items-center gap-2">
-                        <i data-lucide="cpu" class="w-3.5 h-3.5 text-[#D4AF37]"></i>
-                        Stack Técnico & Software Especializado
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <div class="px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2 hover:border-[#D4AF37]/40 transition">
-                            <span class="w-2.5 h-2.5 rounded-full bg-indigo-400"></span>
-                            <span class="text-xs font-semibold text-zinc-200">Adobe Premiere Pro</span>
-                        </div>
-                        <div class="px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2 hover:border-[#D4AF37]/40 transition">
-                            <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
-                            <span class="text-xs font-semibold text-zinc-200">After Effects (Motion & VFX)</span>
-                        </div>
-                        <div class="px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2 hover:border-[#D4AF37]/40 transition">
-                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                            <span class="text-xs font-semibold text-zinc-200">DaVinci Resolve Studio (Color)</span>
-                        </div>
-                        <div class="px-3 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 flex items-center gap-2 hover:border-[#D4AF37]/40 transition">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                            <span class="text-xs font-semibold text-zinc-200">Adobe Audition (Sound Design)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                    <a href="#verticales"
-                        class="px-7 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-amber-400 to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider hover:shadow-xl hover:shadow-[#D4AF37]/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5">
-                        <span>Explorar Portafolio Visual</span>
-                        <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
-                    </a>
-                    <button onclick="copyEmailToClipboard()"
-                        class="px-6 py-3.5 sm:py-4 rounded-full bg-brand-card hover:bg-white/[0.07] border border-white/10 text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2.5 transition group">
-                        <i data-lucide="copy" class="w-4 h-4 text-zinc-400 group-hover:text-[#D4AF37] transition-colors"></i>
-                        <span id="email-btn-text">Copiar Email Corporativo</span>
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- Right Column: Profile Photo Container -->
-            <div class="lg:col-span-5 flex justify-center mt-6 lg:mt-0">
-                <div class="relative w-full max-w-sm sm:max-w-md">
-                    
-                    <!-- Ambient Glow Outer Frame -->
-                    <div class="absolute -inset-2 bg-gradient-to-tr from-[#D4AF37]/30 via-indigo-500/20 to-amber-200/10 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-700"></div>
-
-                    <div class="relative rounded-3xl overflow-hidden bg-brand-card border border-white/15 aspect-[4/5] shadow-2xl">
-                        <img id="hero-img"
-                            src="img/perfil.jpg"
-                            alt="Antony Escalona - Editor de Video"
-                            class="w-full h-full object-cover object-center grayscale contrast-110 hover:grayscale-0 hover:scale-105 transition duration-700 ease-out"
-                            onerror="this.src='https://placehold.co/600x750/12141C/FFFFFF?text=Antony+Escalona'" />
-
-                        <!-- Glassmorphic Overlay Badge -->
-                        <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3.5 sm:p-4 rounded-2xl bg-black/75 backdrop-blur-xl border border-white/10 flex items-center justify-between">
-                            <div>
-                                <p class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-[#D4AF37]">
-                                    Cobertura Internacional
-                                </p>
-                                <p class="text-xs font-bold text-white flex items-center gap-2 mt-0.5">
-                                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                    Latam, España & EE.UU.
-                                </p>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-zinc-400">Formatos</p>
-                                <p class="text-xs font-bold text-zinc-200">4K UHD / HDR</p>
-                            </div>
-                        </div>
+                <div class="hero__content">
+                    <div class="pill reveal">
+                        <span class="dot dot--pulse"></span>
+                        Disponible para proyectos — Q4 2026
                     </div>
 
-                    <!-- Floating Experience Badge -->
-                    <div class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-brand-card/95 border border-[#D4AF37]/40 backdrop-blur-xl px-4 sm:px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#D4AF37]/15 flex items-center justify-center text-[#D4AF37]">
-                            <i data-lucide="award" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                        </div>
-                        <div>
-                            <span class="block text-base sm:text-lg font-extrabold font-display text-white">+5 Años</span>
-                            <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-zinc-400 tracking-wider">Experiencia Senior</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <h1 class="hero__title">
+                        <span class="line"><span class="line__inner">Diseño &amp; Edición</span></span>
+                        <span class="line"><span class="line__inner">audiovisual que</span></span>
+                        <span class="line"><span class="line__inner text-gradient">retiene y convierte.</span></span>
+                    </h1>
 
-        </div>
-    </section>
-
-    <!-- TRUSTED BY / CLIENT MARQUEE -->
-    <section class="border-y border-white/[0.08] bg-brand-card/40 py-6 sm:py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <p class="text-center text-[10px] sm:text-[11px] uppercase tracking-widest text-zinc-400 font-bold mb-4 sm:mb-6">
-                Producciones desarrolladas para agencias, marcas e infoproductores líderes
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-16 opacity-70">
-                <span class="font-display font-extrabold text-sm sm:text-lg tracking-wider text-zinc-300 hover:text-[#D4AF37] transition-colors">NEXUS MEDIA</span>
-                <span class="font-display font-extrabold text-sm sm:text-lg tracking-wider text-zinc-300 hover:text-[#D4AF37] transition-colors">GROWTH LAB</span>
-                <span class="font-display font-extrabold text-sm sm:text-lg tracking-wider text-zinc-300 hover:text-[#D4AF37] transition-colors">CREATOR CLUB</span>
-                <span class="font-display font-extrabold text-sm sm:text-lg tracking-wider text-zinc-300 hover:text-[#D4AF37] transition-colors">FLOW STUDIO</span>
-                <span class="font-display font-extrabold text-sm sm:text-lg tracking-wider text-zinc-300 hover:text-[#D4AF37] transition-colors">SCALE DIGITALS</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 1: FORMATOS VERTICALES (9:16) -->
-    <section id="verticales" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-            <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-wider mb-3">
-                    <i data-lucide="smartphone" class="w-3.5 h-3.5"></i>
-                    Formatos Cortos (9:16)
-                </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
-                    Reels, TikTok & YouTube Shorts
-                </h2>
-                <p class="text-zinc-400 text-xs sm:text-base mt-2 max-w-2xl">
-                    Hook inicial diseñado para detener el scroll en menos de 2.5 segundos, animación kinetic de subtítulos, cortes de ritmo acelerado y sound design envolvente.
-                </p>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="flex gap-2 p-1.5 rounded-xl bg-brand-card border border-white/10 text-xs font-semibold text-zinc-400 self-start md:self-auto">
-                <button onclick="filterVerticals('all')" id="btn-v-all" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg bg-white/10 text-white transition">Todos (4)</button>
-                <button onclick="filterVerticals('edu')" id="btn-v-edu" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg hover:text-white transition">Educativo</button>
-                <button onclick="filterVerticals('story')" id="btn-v-story" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-lg hover:text-white transition">Storytelling</button>
-            </div>
-        </div>
-
-        <!-- Vertical Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
-
-            <!-- Card 1 -->
-            <div class="v-card edu group relative rounded-2xl overflow-hidden bg-brand-card border border-white/[0.08] hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col shadow-xl">
-                <div class="relative aspect-vertical overflow-hidden cursor-pointer"
-                    onclick="openVideoModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Ganchos Psicológicos para Nicho Financiero', 'Reel Educativo - Finanzas & E-commerce')">
-                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=700&q=80"
-                        alt="Miniatura Reel Finanzas"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-
-                    <!-- Play Trigger -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-14 h-14 rounded-full bg-[#D4AF37] text-black flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 fill-black ml-1"></i>
-                        </div>
-                    </div>
-
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-black/75 backdrop-blur-md text-[#D4AF37] border border-white/10">
-                        2.4M Vistas
-                    </span>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Finanzas & E-Commerce</p>
-                        <h3 class="text-sm font-bold text-white mt-1.5 group-hover:text-amber-200 transition-colors line-clamp-2">
-                            Estructura de hook y retención sostenida en 45s
-                        </h3>
-                    </div>
-                    <div class="pt-3.5 mt-3.5 border-t border-white/[0.06] flex items-center justify-between text-xs text-zinc-400">
-                        <span class="font-medium">Subtitulado Kinetic</span>
-                        <span class="text-zinc-500 font-mono">0:45</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="v-card story group relative rounded-2xl overflow-hidden bg-brand-card border border-white/[0.08] hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col shadow-xl">
-                <div class="relative aspect-vertical overflow-hidden cursor-pointer"
-                    onclick="openVideoModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Storytelling Personal: Marca de Alto Impacto', 'TikTok Creator')">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80"
-                        alt="Miniatura Storytelling"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-14 h-14 rounded-full bg-[#D4AF37] text-black flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 fill-black ml-1"></i>
-                        </div>
-                    </div>
-
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-black/75 backdrop-blur-md text-emerald-300 border border-white/10">
-                        890k Vistas
-                    </span>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Marca Personal</p>
-                        <h3 class="text-sm font-bold text-white mt-1.5 group-hover:text-amber-200 transition-colors line-clamp-2">
-                            Narrativa visual cinemática con Sound Design Foley
-                        </h3>
-                    </div>
-                    <div class="pt-3.5 mt-3.5 border-t border-white/[0.06] flex items-center justify-between text-xs text-zinc-400">
-                        <span class="font-medium">Edición de Ritmo</span>
-                        <span class="text-zinc-500 font-mono">0:58</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="v-card edu group relative rounded-2xl overflow-hidden bg-brand-card border border-white/[0.08] hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col shadow-xl">
-                <div class="relative aspect-vertical overflow-hidden cursor-pointer"
-                    onclick="openVideoModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Lanzamiento SaaS B2B: Motion Graphics', 'Short de Producto & Tech')">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=700&q=80"
-                        alt="Miniatura SaaS"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-14 h-14 rounded-full bg-[#D4AF37] text-black flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 fill-black ml-1"></i>
-                        </div>
-                    </div>
-
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-black/75 backdrop-blur-md text-indigo-300 border border-white/10">
-                        Viral B2B
-                    </span>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Tecnología / SaaS</p>
-                        <h3 class="text-sm font-bold text-white mt-1.5 group-hover:text-amber-200 transition-colors line-clamp-2">
-                            Animación UI & Motion Graphics en After Effects
-                        </h3>
-                    </div>
-                    <div class="pt-3.5 mt-3.5 border-t border-white/[0.06] flex items-center justify-between text-xs text-zinc-400">
-                        <span class="font-medium">AE 2D/3D</span>
-                        <span class="text-zinc-500 font-mono">0:32</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="v-card story group relative rounded-2xl overflow-hidden bg-brand-card border border-white/[0.08] hover:border-[#D4AF37]/50 transition-all duration-300 flex flex-col shadow-xl">
-                <div class="relative aspect-vertical overflow-hidden cursor-pointer"
-                    onclick="openVideoModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Alto Rendimiento & Estilo de Vida', 'Fitness Reel')">
-                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=700&q=80"
-                        alt="Miniatura Fitness"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-14 h-14 rounded-full bg-[#D4AF37] text-black flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                            <i data-lucide="play" class="w-6 h-6 fill-black ml-1"></i>
-                        </div>
-                    </div>
-
-                    <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-[11px] font-bold bg-black/75 backdrop-blur-md text-[#D4AF37] border border-white/10">
-                        1.1M Vistas
-                    </span>
-                </div>
-
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">Estilo de Vida & Deporte</p>
-                        <h3 class="text-sm font-bold text-white mt-1.5 group-hover:text-amber-200 transition-colors line-clamp-2">
-                            Sincronización rítmica y Color Grading cinemático
-                        </h3>
-                    </div>
-                    <div class="pt-3.5 mt-3.5 border-t border-white/[0.06] flex items-center justify-between text-xs text-zinc-400">
-                        <span class="font-medium">Color Grading</span>
-                        <span class="text-zinc-500 font-mono">0:30</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SECTION 2: FORMATOS HORIZONTALES (16:9) -->
-    <section id="horizontales" class="py-20 sm:py-28 border-t border-white/[0.08] bg-[#0A0B10]/80 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-3">
-                        <i data-lucide="tv" class="w-3.5 h-3.5"></i>
-                        Producción Horizontal (16:9)
-                    </div>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
-                        YouTube, VSL & Documentales
-                    </h2>
-                    <p class="text-zinc-400 text-xs sm:text-base mt-2 max-w-2xl">
-                        Producciones extensas donde el ritmo editorial, la estructura narrativa y los gráficos explicativos garantizan un tiempo medio de reproducción (AVD) sobresaliente.
-                    </p>
-                </div>
-
-                <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-semibold text-zinc-400">
-                    <span class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#D4AF37]"></i> VSLs de Alta Conversión</span>
-                    <span class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-[#D4AF37]"></i> Documentales & Long-Form</span>
-                </div>
-            </div>
-
-            <!-- Horizontal Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-10">
-
-                <!-- Horizontal Item 1: VSL High Ticket -->
-                <div class="group rounded-3xl overflow-hidden bg-brand-card border border-white/[0.08] hover:border-[#D4AF37]/40 transition-all duration-300 flex flex-col shadow-2xl">
-                    <div class="relative aspect-horizontal overflow-hidden cursor-pointer"
-                        onclick="openVideoModal('https://drive.google.com/file/d/1GAxdaTJGcA7inO9Z5JW6l3nLomCi5Xe9/view?usp=sharing', 'Video Sales Letter (VSL) de Alta Conversión', 'VSL Horizontal - Google Drive')">
-                        <img src="https://lh3.googleusercontent.com/d/1GAxdaTJGcA7inO9Z5JW6l3nLomCi5Xe9"
-                            alt="Miniatura VSL Google Drive"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
-
-                        <!-- Center Play Button -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 backdrop-blur text-black flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#D4AF37] transition-all">
-                                <i data-lucide="play" class="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-1"></i>
-                            </div>
-                        </div>
-
-                        <div class="absolute top-3 sm:top-4 left-3 sm:left-4 flex gap-2">
-                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/80 backdrop-blur-md text-[#D4AF37] border border-white/10">
-                                VSL Funnel
-                            </span>
-                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                                +4.8% Conv. Rate
-                            </span>
-                        </div>
-                        <span class="absolute bottom-3 right-3 sm:right-4 px-2.5 py-1 rounded-md bg-black/85 text-xs font-mono text-zinc-300">
-                            14:20
-                        </span>
-                    </div>
-
-                    <div class="p-5 sm:p-7">
-                        <div class="flex items-center justify-between text-xs text-zinc-400 mb-2">
-                            <span class="text-[#D4AF37] font-bold uppercase tracking-wider">Cliente: Agencia de Escalamiento</span>
-                            <span class="font-medium">Premiere + After Effects</span>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold font-display text-white group-hover:text-amber-200 transition-colors">
-                            VSL Estratégico para Programa High-Ticket B2B
-                        </h3>
-                        <p class="text-xs sm:text-sm text-zinc-400 mt-2 leading-relaxed">
-                            Diseñado con ganchos de curiosidad, metáforas animadas kinetic typography y sound design de tensión que mantiene la retención a lo largo de los 14 minutos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Horizontal Item 2: YouTube Tech Documentary -->
-                <div class="group rounded-3xl overflow-hidden bg-brand-card border border-white/[0.08] hover:border-[#D4AF37]/40 transition-all duration-300 flex flex-col shadow-2xl">
-                    <div class="relative aspect-horizontal overflow-hidden cursor-pointer"
-                        onclick="openVideoModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Edición Estilo Documental para Canal de YouTube', 'Canal de Divulgación Tech')">
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80"
-                            alt="Miniatura Documental Tech"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
-
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 backdrop-blur text-black flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#D4AF37] transition-all">
-                                <i data-lucide="play" class="w-6 h-6 sm:w-7 sm:h-7 fill-current ml-1"></i>
-                            </div>
-                        </div>
-
-                        <div class="absolute top-3 sm:top-4 left-3 sm:left-4 flex gap-2">
-                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/80 backdrop-blur-md text-red-400 border border-white/10 flex items-center gap-1.5">
-                                <i data-lucide="youtube" class="w-3.5 h-3.5"></i> YouTube
-                            </span>
-                            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/80 backdrop-blur-md text-zinc-200 border border-white/10">
-                                520k Views
-                            </span>
-                        </div>
-                        <span class="absolute bottom-3 right-3 sm:right-4 px-2.5 py-1 rounded-md bg-black/85 text-xs font-mono text-zinc-300">
-                            18:45
-                        </span>
-                    </div>
-
-                    <div class="p-5 sm:p-7">
-                        <div class="flex items-center justify-between text-xs text-zinc-400 mb-2">
-                            <span class="text-[#D4AF37] font-bold uppercase tracking-wider">Cliente: Creador Tech (300k subs)</span>
-                            <span class="font-medium">DaVinci + Premiere</span>
-                        </div>
-                        <h3 class="text-lg sm:text-xl font-bold font-display text-white group-hover:text-amber-200 transition-colors">
-                            Documental: La Evolución de la Inteligencia Artificial
-                        </h3>
-                        <p class="text-xs sm:text-sm text-zinc-400 mt-2 leading-relaxed">
-                            Estilo periodístico-cinematográfico con mapas interactivos, recortes 3D animados y un tratamiento sonoro que duplicó la retención promedio del canal.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- METODOLOGÍA & WORKFLOW SECTION -->
-    <section id="metodologia" class="py-20 sm:py-28 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
-                <i data-lucide="workflow" class="w-3.5 h-3.5"></i>
-                Metodología de Trabajo
-            </div>
-            <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
-                Proceso de Postproducción Riguroso
-            </h2>
-            <p class="text-zinc-400 text-xs sm:text-base mt-2 sm:mt-3">
-                Un flujo de trabajo estructurado para garantizar consistencia, tiempos de entrega puntuales y estándares de calidad internacional.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 sm:gap-6">
-
-            <!-- Step 1 -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-brand-card border border-white/[0.08] relative">
-                <span class="text-2xl sm:text-3xl font-black font-display text-[#D4AF37]/40 block mb-3 sm:mb-4">01</span>
-                <h3 class="text-sm sm:text-base font-bold text-white font-display mb-2">Briefing & Estrategia</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                    Análisis del objetivo del video, perfil de audiencia y diseño de la estructura de ganchos iniciales.
-                </p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-brand-card border border-white/[0.08] relative">
-                <span class="text-2xl sm:text-3xl font-black font-display text-[#D4AF37]/40 block mb-3 sm:mb-4">02</span>
-                <h3 class="text-sm sm:text-base font-bold text-white font-display mb-2">Edición & Ritmo</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                    Selección de tomas principales (A-roll), inserción estratégica de B-roll y marcado de tempo dinámico.
-                </p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-brand-card border border-white/[0.08] relative">
-                <span class="text-2xl sm:text-3xl font-black font-display text-[#D4AF37]/40 block mb-3 sm:mb-4">03</span>
-                <h3 class="text-sm sm:text-base font-bold text-white font-display mb-2">Motion & Sound Design</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                    Creación de animaciones cinemáticas, efectos de sonido inmersivos (Foley) y titulación estilizada.
-                </p>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="p-5 sm:p-6 rounded-2xl bg-brand-card border border-white/[0.08] relative">
-                <span class="text-2xl sm:text-3xl font-black font-display text-[#D4AF37]/40 block mb-3 sm:mb-4">04</span>
-                <h3 class="text-sm sm:text-base font-bold text-white font-display mb-2">Color & Master</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed">
-                    Etalonaje de color en DaVinci Resolve, ecualización de audio profesional y entrega en formatos finalizados.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS SECTION -->
-    <section id="testimonios" class="py-20 sm:py-28 border-t border-white/[0.08] bg-[#0A0B10]/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-[#D4AF37] text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
-                    <i data-lucide="star" class="w-3.5 h-3.5"></i>
-                    Testimonios
-                </div>
-                <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
-                    Lo que dicen Directores y Creadores
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
-
-                <!-- Quote 1 -->
-                <div class="p-6 sm:p-7 rounded-2xl bg-brand-card border border-white/[0.08] flex flex-col justify-between">
-                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed italic">
-                        "Antony transformó la retención de nuestro canal de YouTube. Pasamos de un promedio de 35% de retención a casi un 55% en videos de más de 15 minutos."
-                    </p>
-                    <div class="mt-5 sm:mt-6 flex items-center gap-3.5 pt-4 border-t border-white/[0.06]">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-indigo-500/20 text-indigo-300 font-bold flex items-center justify-center text-xs sm:text-sm">
-                            CM
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-white">Carlos Mendoza</span>
-                            <span class="text-[10px] sm:text-[11px] text-zinc-400">Fundador, Growth Media Lab</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quote 2 -->
-                <div class="p-6 sm:p-7 rounded-2xl bg-brand-card border border-white/[0.08] flex flex-col justify-between">
-                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed italic">
-                        "Su atención al detalle con el sound design y la sincronización de ritmo marca una diferencia brutal respecto a otros editores. Impecable en los plazos."
-                    </p>
-                    <div class="mt-5 sm:mt-6 flex items-center gap-3.5 pt-4 border-t border-white/[0.06]">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] font-bold flex items-center justify-center text-xs sm:text-sm">
-                            SV
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-white">Sofía Valenzuela</span>
-                            <span class="text-[10px] sm:text-[11px] text-zinc-400">Creadora de Contenido & Speaker</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quote 3 -->
-                <div class="p-6 sm:p-7 rounded-2xl bg-brand-card border border-white/[0.08] flex flex-col justify-between">
-                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed italic">
-                        "El VSL que editó Antony para nuestro lanzamiento logró la tasa de conversión más alta de nuestro funnel en 2026. Altamente recomendado."
-                    </p>
-                    <div class="mt-5 sm:mt-6 flex items-center gap-3.5 pt-4 border-t border-white/[0.06]">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-emerald-500/20 text-emerald-300 font-bold flex items-center justify-center text-xs sm:text-sm">
-                            MR
-                        </div>
-                        <div>
-                            <span class="block text-xs font-bold text-white">Mateo Rivas</span>
-                            <span class="text-[10px] sm:text-[11px] text-zinc-400">Director de Marketing, Scale Agency</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT & CTA SECTION -->
-    <section id="contacto" class="py-20 sm:py-28 relative max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
-        <div class="relative rounded-3xl bg-gradient-to-br from-brand-card via-[#10121A] to-[#161924] border border-white/15 p-6 sm:p-12 lg:p-16 overflow-hidden shadow-2xl">
-
-            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-
-                <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-[#D4AF37] mb-6">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        Inicia una Colaboración
-                    </div>
-
-                    <h2 class="text-2xl sm:text-5xl font-extrabold font-display text-white tracking-tight leading-tight mb-5 sm:mb-6">
-                        ¿Hablamos de tu próximo <span class="text-gold-gradient">proyecto audiovisual?</span>
-                    </h2>
-
-                    <p class="text-sm sm:text-base text-zinc-300 max-w-lg mb-8 leading-relaxed">
-                        Si buscas elevar el nivel de tu contenido, optimizar la retención de tu canal o lanzar un VSL de alta conversión, coordinemos los detalles hoy mismo.
+                    <p class="hero__lead reveal" style="--d:.45s">
+                        Soy <strong>Anthony Escalona</strong>, Diseñador Gráfico y Editor de Video.
+                        Transformo ideas y material crudo en piezas visuales de alta retención para marcas,
+                        infoproductores y creadores que buscan maximizar su impacto digital.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-3.5 mb-8">
-                        <a href="mailto:antony.escalona@ejemplo.com"
-                            class="px-7 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-amber-400 to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider hover:shadow-xl hover:shadow-[#D4AF37]/20 hover:scale-[1.02] active:scale-[0.98] transition flex items-center justify-center gap-2.5">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                            <span>Enviar Correo Corporativo</span>
+                    <div class="stats reveal" data-counters style="--d:.55s">
+                        <div class="stat">
+                            <span class="stat__num" data-count="2" data-prefix="+" data-suffix="M">+2M</span>
+                            <span class="stat__label">Visualizaciones</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__num stat__num--gold" data-count="100" data-prefix="+">+100</span>
+                            <span class="stat__label">Proyectos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__num" data-count="99.4" data-decimals="1" data-suffix="%">99.4%</span>
+                            <span class="stat__label">Entrega a tiempo</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__num stat__num--green" data-count="45" data-prefix="+"
+                                data-suffix="%">+45%</span>
+                            <span class="stat__label">Retención</span>
+                        </div>
+                    </div>
+
+                    <div class="reveal" style="--d:.65s">
+                        <p class="eyebrow"><i data-lucide="cpu"></i> Software &amp; Herramientas</p>
+                        <ul class="chips">
+                            <li class="chip"><span class="chip__dot" style="--c:#818CF8"></span>Adobe Premiere</li>
+                            <li class="chip"><span class="chip__dot" style="--c:#FBBF24"></span>DaVinci</li>
+                            <li class="chip"><span class="chip__dot" style="--c:#34D399"></span>CapCut Pro</li>
+                        </ul>
+                    </div>
+
+                    <div class="hero__actions reveal" style="--d:.75s">
+                        <a href="#verticales" class="btn btn--primary btn--lg">
+                            Ver portafolio <i data-lucide="arrow-down-right"></i>
                         </a>
-
-                        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer"
-                            class="px-6 py-3.5 sm:py-4 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
-                            <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
-                            <span>Contacto Directo WhatsApp</span>
-                        </a>
-                    </div>
-
-                    <div class="flex flex-wrap items-center gap-5 sm:gap-6 pt-4 border-t border-white/[0.08] text-xs text-zinc-400 font-medium">
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="clock" class="w-4 h-4 text-[#D4AF37]"></i>
-                            <span>Respuesta prioritaria en &lt; 24h</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-[#D4AF37]"></i>
-                            <span>Garantía de revisiones ilimitadas</span>
-                        </div>
+                        <button class="btn btn--ghost btn--lg" id="copyEmail" type="button">
+                            <i data-lucide="copy"></i> <span id="copyEmailText">Copiar email</span>
+                        </button>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 flex justify-center lg:justify-end">
-                    <div class="relative w-full max-w-xs sm:max-w-sm">
-
-                        <div class="relative rounded-2xl overflow-hidden border border-white/20 aspect-[3/4] shadow-2xl group">
-                            <img id="cta-img"
-                                src="img/perfil.jpg"
-                                alt="Antony Escalona trabajando"
-                                class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
-                                onerror="this.src='https://placehold.co/600x800/12141C/FFFFFF?text=Antony+Escalona'" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
-
-                            <div class="absolute bottom-5 left-5 right-5">
-                                <p class="text-white font-display font-extrabold text-sm sm:text-base">"El ritmo y la narrativa determinan el valor percibido."</p>
-                                <p class="text-xs text-[#D4AF37] font-semibold mt-1">— Antony Escalona</p>
+                <div class="hero__visual reveal reveal--scale" style="--d:.3s">
+                    <div class="portrait">
+                        <div class="portrait__ring" aria-hidden="true"></div>
+                        <div class="portrait__frame">
+                            <img src="img/perfil.jpg" alt="Anthony Escalona, diseñador gráfico y editor de video"
+                                onerror="this.src='https://placehold.co/600x750/12141C/FFFFFF?text=Anthony+Escalona'">
+                            <div class="portrait__overlay">
+                                <div>
+                                    <small>Cobertura internacional</small>
+                                    <strong><span class="dot dot--pulse"></span> Latam, España &amp; EE.UU.</strong>
+                                </div>
+                                <div class="ta-right">
+                                    <small>Entrega</small>
+                                    <strong>4K UHD / HDR</strong>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="absolute -bottom-3 -left-3 bg-[#07080B] border border-white/10 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2.5">
-                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                            <span class="text-xs font-bold text-zinc-200">Agenda Abierta</span>
+                        <div class="float-badge float-badge--top">
+                            <span class="float-badge__icon"><i data-lucide="award"></i></span>
+                            <div><strong>+100</strong><small>Proyectos listos</small></div>
                         </div>
-
+                        <div class="float-badge float-badge--side">
+                            <span class="float-badge__icon"><i data-lucide="trending-up"></i></span>
+                            <div><strong>+2M</strong><small>Visualizaciones</small></div>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-white/[0.08] bg-[#050608] py-10 sm:py-12 text-zinc-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-[#D4AF37]/20 text-[#D4AF37] font-display font-bold flex items-center justify-center text-xs">
-                    AE
-                </div>
-                <span class="text-zinc-400 font-medium">© 2026 Antony Escalona. Todos los derechos reservados.</span>
-            </div>
-
-            <div class="flex items-center gap-6 font-medium">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
-                    <i data-lucide="instagram" class="w-4 h-4"></i> Instagram
-                </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
-                    <i data-lucide="youtube" class="w-4 h-4"></i> YouTube
-                </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
-                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
-                </a>
-            </div>
-
-            <a href="#sobre-mi" class="hover:text-white transition flex items-center gap-1 font-semibold">
-                <span>Volver arriba</span>
-                <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <a href="#marcas" class="scroll-hint" aria-label="Desplazarse hacia abajo">
+                <span class="scroll-hint__mouse"></span>
+                Scroll
             </a>
+        </section>
 
+        <!-- ================= ESPECIALIDADES ================= -->
+        <section class="marquee" id="marcas" aria-label="Especialidades">
+            <p class="marquee__title">Especialidades &amp; Formatos de Alto Impacto Visual</p>
+            <div class="marquee__viewport">
+                <div class="marquee__track">
+                    <div class="marquee__group">
+                        <span>REELS &amp; SHORTS VIRALES</span><i>✦</i>
+                        <span>YOUTUBE LONG-FORM</span><i>✦</i>
+                        <span>KINETIC SUBTITLES</span><i>✦</i>
+                        <span>MOTION GRAPHICS</span><i>✦</i>
+                        <span>COLOR GRADING</span><i>✦</i>
+                        <span>SOUND DESIGN PRO</span><i>✦</i>
+                        <span>VSL &amp; ADS DE CONVERSIÓN</span><i>✦</i>
+                    </div>
+                    <div class="marquee__group" aria-hidden="true">
+                        <span>REELS &amp; SHORTS VIRALES</span><i>✦</i>
+                        <span>YOUTUBE LONG-FORM</span><i>✦</i>
+                        <span>KINETIC SUBTITLES</span><i>✦</i>
+                        <span>MOTION GRAPHICS</span><i>✦</i>
+                        <span>COLOR GRADING</span><i>✦</i>
+                        <span>SOUND DESIGN PRO</span><i>✦</i>
+                        <span>VSL &amp; ADS DE CONVERSIÓN</span><i>✦</i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= VERTICALES 9:16 ================= -->
+        <section class="section" id="verticales">
+            <div class="container">
+                <div class="section__head">
+                    <div>
+                        <span class="tag reveal"><i data-lucide="smartphone"></i> Formatos cortos 9:16</span>
+                        <h2 class="section__title reveal" style="--d:.1s">Reels, TikTok &amp; <span
+                                class="text-gradient">Shorts</span></h2>
+                        <p class="section__desc reveal" style="--d:.2s">
+                            Hooks que detienen el scroll en menos de 2.5 segundos, subtítulos kinetic, cortes de
+                            ritmo acelerado y sound design envolvente.
+                        </p>
+                    </div>
+                    <div class="filters reveal" style="--d:.3s" role="tablist" aria-label="Filtrar videos">
+                        <button class="filter is-active" data-filter="all" role="tab" aria-selected="true">Todos (10)</button>
+                        <button class="filter" data-filter="story" role="tab" aria-selected="false">Storytelling &amp; Marca</button>
+                        <button class="filter" data-filter="edu" role="tab" aria-selected="false">Educativo</button>
+                        <button class="filter" data-filter="ads" role="tab" aria-selected="false">Comercial &amp; Ads</button>
+                    </div>
+                </div>
+
+                <div class="grid grid--vertical">
+
+                    <!-- Video 1: Fin de jornada -->
+                    <article class="card card--vertical reveal" data-cat="story" style="--d:0s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1Qpf8WP8lSbYYYT5J-lcCE9SYE9OHep7L/view?usp=sharing"
+                            data-title="¿Qué pasa cuando tu equipo termina su jornada?"
+                            data-category="Storytelling · Cultura Corporativa" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1Qpf8WP8lSbYYYT5J-lcCE9SYE9OHep7L"
+                                alt="Miniatura reel jornada laboral" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge">Viral Story</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Cultura Corporativa &amp; Storytelling</p>
+                            <h3 class="card__title">¿Qué pasa cuando tu equipo termina su jornada?</h3>
+                            <div class="card__meta"><span>Subtitulado kinetic</span><span>Adobe Premiere</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 2: Casa en Murcia -->
+                    <article class="card card--vertical reveal" data-cat="story" style="--d:.08s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1Otwkx08w-OgTTGBpSeN6M504ajx-97NG/view?usp=sharing"
+                            data-title="Buscando casa en Murcia"
+                            data-category="Bienes Raíces · Real Estate" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1Otwkx08w-OgTTGBpSeN6M504ajx-97NG"
+                                alt="Miniatura buscando casa en Murcia" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--green">Real Estate</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Inmobiliaria &amp; Recorrido</p>
+                            <h3 class="card__title">Buscando casa en Murcia</h3>
+                            <div class="card__meta"><span>Edición dinámica</span><span>DaVinci</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 3: Curso Valencia -->
+                    <article class="card card--vertical reveal" data-cat="edu" style="--d:.16s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/10pvBx7DFRqY4dibs6g1GrvL3q1-R8cmw/view?usp=sharing"
+                            data-title="Lanzamiento Curso Valencia"
+                            data-category="Educación · Formación Presencial" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/10pvBx7DFRqY4dibs6g1GrvL3q1-R8cmw"
+                                alt="Miniatura curso Valencia" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--indigo">Promo Oficial</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Formación &amp; Eventos</p>
+                            <h3 class="card__title">Lanzamiento Curso Valencia</h3>
+                            <div class="card__meta"><span>Ritmo &amp; Efectos</span><span>CapCut Pro</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 4: Campaña Final -->
+                    <article class="card card--vertical reveal" data-cat="ads" style="--d:.24s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/10Nx-vO-7s481Y9HX_SEnfCuUKguybZVK/view?usp=sharing"
+                            data-title="Campaña Publicitaria de Alto Impacto"
+                            data-category="Publicidad &amp; Conversión · Ads" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/10Nx-vO-7s481Y9HX_SEnfCuUKguybZVK"
+                                alt="Miniatura campaña publicitaria" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--red">Direct Response</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Anuncios &amp; Performance</p>
+                            <h3 class="card__title">Campaña Publicitaria de Alto Impacto</h3>
+                            <div class="card__meta"><span>Hook en 3 seg</span><span>Adobe Premiere</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 5: HyperExcel Maracay -->
+                    <article class="card card--vertical reveal" data-cat="edu" style="--d:.32s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1IlujOKlpMkMfR8kapn2SBZTF8gT6mrO6/view?usp=sharing"
+                            data-title="HyperExcel Maracay - Masterclass"
+                            data-category="Educación · Software &amp; Herramientas" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1IlujOKlpMkMfR8kapn2SBZTF8gT6mrO6"
+                                alt="Miniatura HyperExcel Maracay" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--indigo">Masterclass</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Educación Digital &amp; Negocios</p>
+                            <h3 class="card__title">HyperExcel Maracay - Formación Avanzada</h3>
+                            <div class="card__meta"><span>Efectos &amp; Textos</span><span>CapCut Pro</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 6: Jamonería Gourmet -->
+                    <article class="card card--vertical reveal" data-cat="ads" style="--d:.4s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1ht2TcCTiy7uDQH--jrDMfVogMwTPc-3q/view?usp=sharing"
+                            data-title="Spot Comercial Jamonería Gourmet"
+                            data-category="Comercial · Gastronomía" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1ht2TcCTiy7uDQH--jrDMfVogMwTPc-3q"
+                                alt="Miniatura Jamonería Gourmet" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--green">Spot Gourmet</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Gastronomía &amp; Producto</p>
+                            <h3 class="card__title">Spot Comercial Jamonería Gourmet</h3>
+                            <div class="card__meta"><span>Color grading</span><span>DaVinci</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 7: Tatuaje barato -->
+                    <article class="card card--vertical reveal" data-cat="story" style="--d:.48s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1J8Y8A85INziIqod3Fj5LzUFLcvXelH5C/view?usp=sharing"
+                            data-title="Lo Barato Sale Caro: Tatuaje Barato"
+                            data-category="Humor &amp; Storytelling · Retención" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1J8Y8A85INziIqod3Fj5LzUFLcvXelH5C"
+                                alt="Miniatura tatuaje barato" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge">Viral Hook</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Entretenimiento Viral</p>
+                            <h3 class="card__title">Lo Barato Sale Caro (Tatuaje Barato)</h3>
+                            <div class="card__meta"><span>Cortes rápidos</span><span>CapCut Pro</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 8: Tatuaje con significado -->
+                    <article class="card card--vertical reveal" data-cat="story" style="--d:.56s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1QkjPr7LyaMhHWtMHJf1uV7m3qGip_Q2W/view?usp=sharing"
+                            data-title="Tatuaje con Significado"
+                            data-category="Storytelling · Emoción &amp; Arte" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1QkjPr7LyaMhHWtMHJf1uV7m3qGip_Q2W"
+                                alt="Miniatura tatuaje con significado" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge">Conexión Emocional</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Storytelling Cinematográfico</p>
+                            <h3 class="card__title">Tatuaje con Significado</h3>
+                            <div class="card__meta"><span>Atmósfera &amp; Ritmo</span><span>DaVinci</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 9: Menopausia -->
+                    <article class="card card--vertical reveal" data-cat="edu" style="--d:.64s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1Hw3GmIOmz1G6uLgbg6ccvuRzQs7HvKO6/view?usp=sharing"
+                            data-title="Salud &amp; Bienestar: Menopausia"
+                            data-category="Divulgación Médica · Salud" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1Hw3GmIOmz1G6uLgbg6ccvuRzQs7HvKO6"
+                                alt="Miniatura reel menopausia salud" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--green">Salud &amp; Bienestar</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Medicina &amp; Divulgación</p>
+                            <h3 class="card__title">Salud Femenina: Menopausia sin Tabúes</h3>
+                            <div class="card__meta"><span>Subtítulos kinetic</span><span>Adobe Premiere</span></div>
+                        </div>
+                    </article>
+
+                    <!-- Video 10: Anna Polaco -->
+                    <article class="card card--vertical reveal" data-cat="story" style="--d:.72s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1zkHk0M_D2FotBk8rXCghlmxNGVrnknwd/view?usp=sharing"
+                            data-title="Anna - Lifestyle &amp; Marca Personal"
+                            data-category="Marca Personal · Tendencias" data-format="vertical">
+                            <img src="https://lh3.googleusercontent.com/d/1zkHk0M_D2FotBk8rXCghlmxNGVrnknwd"
+                                alt="Miniatura reel Anna lifestyle" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges"><span class="badge badge--indigo">Marca Personal</span></span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Reel</span>
+                        </button>
+                        <div class="card__body">
+                            <p class="card__cat">Tendencias &amp; Lifestyle</p>
+                            <h3 class="card__title">Anna - Edición Rítmica &amp; Estilo de Vida</h3>
+                            <div class="card__meta"><span>Ritmo &amp; Estilo</span><span>CapCut Pro</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HORIZONTALES 16:9 ================= -->
+        <section class="section section--alt" id="horizontales">
+            <div class="container">
+                <div class="section__head">
+                    <div>
+                        <span class="tag tag--indigo reveal"><i data-lucide="tv"></i> Producción horizontal 16:9</span>
+                        <h2 class="section__title reveal" style="--d:.1s">YouTube, VSL &amp; <span
+                                class="text-gradient">Documentales</span></h2>
+                        <p class="section__desc reveal" style="--d:.2s">
+                            Producciones extensas donde el ritmo editorial, la estructura narrativa y los gráficos
+                            explicativos garantizan un tiempo medio de reproducción sobresaliente.
+                        </p>
+                    </div>
+                    <div class="checks reveal" style="--d:.3s">
+                        <span><i data-lucide="check-circle-2"></i> VSLs de alta conversión</span>
+                        <span><i data-lucide="check-circle-2"></i> Documentales &amp; long-form</span>
+                    </div>
+                </div>
+
+                <div class="grid grid--horizontal">
+
+                    <article class="card card--horizontal reveal">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/1GAxdaTJGcA7inO9Z5JW6l3nLomCi5Xe9/view?usp=sharing"
+                            data-title="Master of Tattoo — Edición Cinematográfica"
+                            data-category="Cinematografía &amp; Arte · 16:9">
+                            <img src="https://lh3.googleusercontent.com/d/1GAxdaTJGcA7inO9Z5JW6l3nLomCi5Xe9"
+                                alt="Miniatura Master of Tattoo" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1200&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges">
+                                <span class="badge badge--indigo">Cinematográfico</span>
+                                <span class="badge badge--white">Master of Tattoo</span>
+                            </span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">4K · 16:9</span>
+                        </button>
+                        <div class="card__body">
+                            <div class="card__head">
+                                <span class="card__cat">Documental &amp; Storytelling</span>
+                                <span>DaVinci + Premiere</span>
+                            </div>
+                            <h3 class="card__title">Master of Tattoo — Producción Visual &amp; Arte Corporal</h3>
+                            <p class="card__text">
+                                Edición cinematográfica con tratamiento de color profesional (color grading),
+                                diseño sonoro inmersivo y ritmo pausado para resaltar la precisión y el detalle del tatuaje.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card card--horizontal reveal" style="--d:.15s">
+                        <button class="card__media" type="button"
+                            data-video="https://drive.google.com/file/d/19fKo4c_YnT5up0z0rc4qcnEDe3QU8hc3/view?usp=sharing"
+                            data-title="Tutorial YouTube: Tablas Dinámicas &amp; Productividad"
+                            data-category="YouTube Long-Form · Educación Tech">
+                            <img src="https://lh3.googleusercontent.com/d/19fKo4c_YnT5up0z0rc4qcnEDe3QU8hc3"
+                                alt="Miniatura tutorial YouTube tablas dinamicas" loading="lazy"
+                                onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80'">
+                            <span class="card__shade"></span>
+                            <span class="card__badges">
+                                <span class="badge badge--indigo"><i data-lucide="youtube"></i> YouTube</span>
+                                <span class="badge badge--white">Tutorial Dinámico</span>
+                            </span>
+                            <span class="play"><i data-lucide="play"></i></span>
+                            <span class="card__time">Long-Form</span>
+                        </button>
+                        <div class="card__body">
+                            <div class="card__head">
+                                <span class="card__cat">Formación Digital &amp; Tech</span>
+                                <span>Adobe Premiere + DaVinci</span>
+                            </div>
+                            <h3 class="card__title">Tutorial YouTube: Dominio de Tablas Dinámicas &amp; Productividad</h3>
+                            <p class="card__text">
+                                Edición de contenido educativo en formato horizontal optimizado con zoom dinámico,
+                                transiciones fluidas, resaltado de elementos clave y retención visual constante.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROCESO ================= -->
+        <section class="section" id="proceso">
+            <div class="container">
+                <div class="section__head section__head--center">
+                    <span class="tag reveal"><i data-lucide="workflow"></i> Metodología</span>
+                    <h2 class="section__title reveal" style="--d:.1s">Un proceso <span
+                            class="text-gradient">riguroso</span></h2>
+                    <p class="section__desc reveal" style="--d:.2s">
+                        Flujo de trabajo estructurado para garantizar consistencia, entregas puntuales y estándares de
+                        calidad internacional.
+                    </p>
+                </div>
+
+                <div class="steps" data-observe>
+                    <div class="step reveal" style="--d:0s">
+                        <span class="step__num">01</span>
+                        <span class="step__icon"><i data-lucide="clipboard-list"></i></span>
+                        <h3>Briefing &amp; estrategia</h3>
+                        <p>Análisis del objetivo, perfil de audiencia y diseño de la estructura de ganchos.</p>
+                    </div>
+                    <div class="step reveal" style="--d:.15s">
+                        <span class="step__num">02</span>
+                        <span class="step__icon"><i data-lucide="scissors"></i></span>
+                        <h3>Edición &amp; ritmo</h3>
+                        <p>Selección de A-roll, inserción estratégica de B-roll y tempo dinámico.</p>
+                    </div>
+                    <div class="step reveal" style="--d:.3s">
+                        <span class="step__num">03</span>
+                        <span class="step__icon"><i data-lucide="sparkles"></i></span>
+                        <h3>Motion &amp; sound design</h3>
+                        <p>Animaciones cinemáticas, efectos foley inmersivos y titulación estilizada.</p>
+                    </div>
+                    <div class="step reveal" style="--d:.45s">
+                        <span class="step__num">04</span>
+                        <span class="step__icon"><i data-lucide="palette"></i></span>
+                        <h3>Color &amp; master</h3>
+                        <p>Etalonaje en DaVinci Resolve, masterización de audio y entrega final.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= TESTIMONIOS ================= -->
+        <section class="section section--alt" id="testimonios">
+            <div class="container">
+                <div class="section__head section__head--center">
+                    <span class="tag reveal"><i data-lucide="star"></i> Testimonios</span>
+                    <h2 class="section__title reveal" style="--d:.1s">Lo que dicen <span
+                            class="text-gradient">mis clientes</span></h2>
+                </div>
+
+                <div class="quotes">
+                    <figure class="quote reveal" style="--d:0s">
+                        <span class="quote__mark" aria-hidden="true">“</span>
+                        <div class="stars" aria-label="5 estrellas">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p>"Anthony transformó la retención de nuestro canal. Pasamos de un 35% a casi un 55% en videos
+                            de más de 15 minutos."</p>
+                        <figcaption class="quote__author">
+                            <span class="avatar" style="--rgb:129,140,248">CM</span>
+                            <span><strong>Carlos Mendoza</strong><small>Fundador, Growth Media Lab</small></span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="quote reveal" style="--d:.15s">
+                        <span class="quote__mark" aria-hidden="true">“</span>
+                        <div class="stars" aria-label="5 estrellas">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p>"Su atención al detalle con el sound design y el ritmo marca una diferencia brutal.
+                            Impecable con los plazos."</p>
+                        <figcaption class="quote__author">
+                            <span class="avatar" style="--rgb:212,175,55">SV</span>
+                            <span><strong>Sofía Valenzuela</strong><small>Creadora de contenido &amp;
+                                    speaker</small></span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="quote reveal" style="--d:.3s">
+                        <span class="quote__mark" aria-hidden="true">“</span>
+                        <div class="stars" aria-label="5 estrellas">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p>"El VSL que editó para nuestro lanzamiento logró la tasa de conversión más alta de nuestro
+                            funnel en 2026."</p>
+                        <figcaption class="quote__author">
+                            <span class="avatar" style="--rgb:52,211,153">MR</span>
+                            <span><strong>Mateo Rivas</strong><small>Director de Marketing, Scale
+                                    Agency</small></span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACTO ================= -->
+        <section class="section" id="contacto">
+            <div class="container">
+                <div class="cta reveal reveal--scale">
+                    <div class="cta__inner">
+                        <div>
+                            <div class="pill"><span class="dot dot--pulse"></span> Inicia una colaboración</div>
+                            <h2 class="cta__title">¿Hablamos de tu próximo <span class="text-gradient">proyecto
+                                    audiovisual?</span></h2>
+                            <p class="cta__text">
+                                Si buscas elevar el nivel de tu contenido, mejorar la retención de tu canal o lanzar
+                                un VSL que convierta, coordinemos los detalles hoy mismo.
+                            </p>
+                            <div class="cta__actions">
+                                <a href="mailto:tonydisena@gmail.com" class="btn btn--primary btn--lg">
+                                    <i data-lucide="mail"></i> tonydisena@gmail.com
+                                </a>
+                                <a href="https://wa.me/584122713387?text=Hola%20Anthony,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn--ghost btn--lg">
+                                    <i data-lucide="message-circle"></i> +58 412 2713387
+                                </a>
+                            </div>
+                            <div class="cta__perks">
+                                <span><i data-lucide="clock"></i> Respuesta en menos de 24h</span>
+                                <span><i data-lucide="shield-check"></i> Revisiones incluidas</span>
+                            </div>
+                        </div>
+
+                        <div class="cta__photo">
+                            <div class="cta__frame">
+                                <img src="img/perfil.jpg" alt="Anthony Escalona" loading="lazy"
+                                    onerror="this.src='https://placehold.co/600x800/12141C/FFFFFF?text=Anthony+Escalona'">
+                                <div class="cta__quote">
+                                    <p>"Diseño gráfico que cautiva, edición de video que retiene."</p>
+                                    <small>— Anthony Escalona</small>
+                                </div>
+                            </div>
+                            <div class="cta__status"><span class="dot dot--pulse"></span> Agenda abierta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <span class="brand__mark">AE</span>
+                <span>© <span id="year">2026</span> Anthony Escalona. Todos los derechos reservados.</span>
+            </div>
+            <div class="socials">
+                <a href="https://instagram.com" class="social" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                <a href="https://youtube.com" class="social" target="_blank" rel="noopener noreferrer"
+                    aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                <a href="https://linkedin.com" class="social" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            </div>
+            <a href="#inicio" class="to-top">Volver arriba <i data-lucide="arrow-up"></i></a>
         </div>
     </footer>
 
-    <!-- VIDEO PREVIEW MODAL -->
-    <div id="videoModal"
-        class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300">
-        <div class="relative w-full max-w-4xl bg-brand-card border border-white/15 rounded-2xl overflow-hidden shadow-2xl flex flex-col scale-95 transition-transform duration-300"
-            id="modalContainer">
-
-            <!-- Modal Header -->
-            <div class="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-white/10 flex items-center justify-between bg-black/60">
+    <!-- ================= MODAL DE VIDEO ================= -->
+    <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        aria-hidden="true">
+        <div class="modal__backdrop" data-close></div>
+        <div class="modal__dialog">
+            <header class="modal__head">
                 <div>
-                    <span id="modalCategory" class="text-[10px] uppercase font-bold text-[#D4AF37] tracking-widest">Categoría</span>
-                    <h4 id="modalTitle" class="text-sm sm:text-base font-bold text-white font-display mt-0.5">Título del Video</h4>
+                    <span class="modal__cat" id="modalCategory"></span>
+                    <h4 id="modalTitle"></h4>
                 </div>
-                <button onclick="closeVideoModal()"
-                    class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 hover:bg-white/20 text-zinc-300 hover:text-white flex items-center justify-center transition">
-                    <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5"></i>
-                </button>
+                <button class="icon-btn" type="button" data-close aria-label="Cerrar"><i data-lucide="x"></i></button>
+            </header>
+            <div class="modal__player">
+                <video id="modalVideo" controls playsinline hidden></video>
+                <iframe id="modalIframe" title="Reproductor de video" allow="autoplay; encrypted-media; fullscreen"
+                    allowfullscreen hidden></iframe>
             </div>
-
-            <!-- Video Player / Iframe Embed Container -->
-            <div class="relative bg-black flex items-center justify-center min-h-[260px] sm:min-h-[340px] max-h-[70vh] overflow-hidden">
-                <!-- Native Video Tag for MP4s -->
-                <video id="modalVideoPlayer" class="w-full h-auto max-h-[70vh]" controls playsinline>
-                    <source id="modalVideoSource" src="" type="video/mp4">
-                    Tu navegador no soporta reproducción de video.
-                </video>
-                <!-- Iframe for Google Drive, YouTube, or external embeds -->
-                <iframe id="modalIframePlayer" class="w-full h-[50vh] sm:h-[60vh] hidden" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="p-3.5 sm:p-4 bg-brand-card border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
-                <span class="flex items-center gap-2 text-[11px] sm:text-xs">
-                    <i data-lucide="info" class="w-4 h-4 text-[#D4AF37]"></i>
-                    <span id="modalFooterText">Reproductor multiformato compatible con Google Drive, MP4 y YouTube.</span>
-                </span>
-                <div class="flex items-center gap-3">
-                    <a id="modalExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="hidden px-3.5 py-1.5 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/30 font-semibold transition flex items-center gap-1.5">
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                        <span>Abrir en Google Drive</span>
-                    </a>
-                    <button onclick="closeVideoModal()"
-                        class="px-4 py-1.5 rounded-lg bg-white/10 text-white hover:bg-white/20 font-semibold transition">
-                        Cerrar
-                    </button>
+            <footer class="modal__foot">
+                <span><i data-lucide="info"></i> Compatible con Google Drive, YouTube y MP4.</span>
+                <div>
+                    <a id="modalExternal" class="btn btn--sm btn--success" href="#" target="_blank"
+                        rel="noopener noreferrer" hidden><i data-lucide="external-link"></i> Abrir en Drive</a>
+                    <button class="btn btn--sm btn--ghost" type="button" data-close>Cerrar</button>
                 </div>
-            </div>
+            </footer>
         </div>
     </div>
 
-    <!-- Notification Toast for Email Copy -->
-    <div id="toastMessage"
-        class="fixed bottom-6 right-6 z-50 bg-[#D4AF37] text-black font-extrabold text-xs px-5 py-3.5 rounded-xl shadow-2xl opacity-0 translate-y-3 pointer-events-none transition-all flex items-center gap-2.5">
-        <i data-lucide="check-circle" class="w-4 h-4"></i>
-        <span>¡Correo copiado al portapapeles!</span>
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <i data-lucide="check-circle"></i> ¡Correo copiado al portapapeles!
     </div>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Mobile Menu Drawer Toggle
-        function toggleMobileMenu() {
-            const drawer = document.getElementById('mobileDrawer');
-            drawer.classList.toggle('hidden');
-        }
-
-        // Modal Elements
-        const videoModal = document.getElementById('videoModal');
-        const modalContainer = document.getElementById('modalContainer');
-        const modalVideoPlayer = document.getElementById('modalVideoPlayer');
-        const modalVideoSource = document.getElementById('modalVideoSource');
-        const modalIframePlayer = document.getElementById('modalIframePlayer');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalCategory = document.getElementById('modalCategory');
-        const modalExternalBtn = document.getElementById('modalExternalBtn');
-
-        function openVideoModal(videoUrl, title, category) {
-            modalTitle.textContent = title;
-            modalCategory.textContent = category;
-
-            // Reset player states
-            modalVideoPlayer.pause();
-            modalVideoSource.src = '';
-            modalIframePlayer.src = '';
-            modalExternalBtn.classList.add('hidden');
-
-            // 1. Google Drive Link Handling
-            if (videoUrl.includes('drive.google.com')) {
-                let embedUrl = videoUrl;
-                if (embedUrl.includes('/view')) {
-                    embedUrl = embedUrl.replace(/\/view.*$/, '/preview');
-                } else if (embedUrl.includes('/edit')) {
-                    embedUrl = embedUrl.replace(/\/edit.*$/, '/preview');
-                } else if (!embedUrl.endsWith('/preview')) {
-                    const fileIdMatch = embedUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
-                    if (fileIdMatch && fileIdMatch[1]) {
-                        embedUrl = `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
-                    }
-                }
-
-                modalVideoPlayer.classList.add('hidden');
-                modalIframePlayer.classList.remove('hidden');
-                modalIframePlayer.src = embedUrl;
-
-                modalExternalBtn.href = videoUrl;
-                modalExternalBtn.classList.remove('hidden');
-            }
-            // 2. YouTube Link Handling
-            else if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
-                let embedUrl = videoUrl;
-                if (embedUrl.includes('watch?v=')) {
-                    embedUrl = embedUrl.replace('watch?v=', 'embed/').split('&')[0];
-                } else if (embedUrl.includes('youtu.be/')) {
-                    embedUrl = embedUrl.replace('youtu.be/', 'www.youtube.com/embed/').split('?')[0];
-                }
-
-                modalVideoPlayer.classList.add('hidden');
-                modalIframePlayer.classList.remove('hidden');
-                modalIframePlayer.src = embedUrl;
-            }
-            // 3. Direct Video File (.mp4, .webm, etc.)
-            else {
-                modalIframePlayer.classList.add('hidden');
-                modalVideoPlayer.classList.remove('hidden');
-                modalVideoSource.src = videoUrl;
-                modalVideoPlayer.load();
-
-                try {
-                    modalVideoPlayer.play();
-                } catch (err) {
-                    console.warn('Autoplay error:', err);
-                }
-            }
-
-            videoModal.classList.remove('opacity-0', 'pointer-events-none');
-            modalContainer.classList.remove('scale-95');
-            modalContainer.classList.add('scale-100');
-        }
-
-        function closeVideoModal() {
-            modalVideoPlayer.pause();
-            modalVideoSource.src = '';
-            modalIframePlayer.src = '';
-
-            modalContainer.classList.add('scale-95');
-            modalContainer.classList.remove('scale-100');
-            videoModal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) closeVideoModal();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !videoModal.classList.contains('opacity-0')) {
-                closeVideoModal();
-            }
-        });
-
-        // Filter functionality for Vertical Cards
-        function filterVerticals(type) {
-            const cards = document.querySelectorAll('.v-card');
-            const btnAll = document.getElementById('btn-v-all');
-            const btnEdu = document.getElementById('btn-v-edu');
-            const btnStory = document.getElementById('btn-v-story');
-
-            // Reset buttons styling
-            [btnAll, btnEdu, btnStory].forEach(b => {
-                b.classList.remove('bg-white/10', 'text-white');
-                b.classList.add('hover:text-white');
-            });
-
-            if (type === 'all') {
-                btnAll.classList.add('bg-white/10', 'text-white');
-                cards.forEach(c => c.style.display = 'flex');
-            } else if (type === 'edu') {
-                btnEdu.classList.add('bg-white/10', 'text-white');
-                cards.forEach(c => {
-                    c.style.display = c.classList.contains('edu') ? 'flex' : 'none';
-                });
-            } else if (type === 'story') {
-                btnStory.classList.add('bg-white/10', 'text-white');
-                cards.forEach(c => {
-                    c.style.display = c.classList.contains('story') ? 'flex' : 'none';
-                });
-            }
-        }
-
-        // Clipboard Copy Helper
-        function copyEmailToClipboard() {
-            const email = 'antony.escalona@ejemplo.com';
-
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            const toast = document.getElementById('toastMessage');
-            const emailBtnText = document.getElementById('email-btn-text');
-
-            emailBtnText.textContent = '¡Copiado Exitosamente!';
-            toast.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
-                emailBtnText.textContent = 'Copiar Email Corporativo';
-            }, 2500);
-        }
-    </script>
 </body>
 
 </html>
